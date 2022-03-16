@@ -1,0 +1,466 @@
+@mixin skill_line {
+    align-items: center;
+    width: 100%;
+    height: 15px;
+    background: #e4bad4;
+    position: relative;
+    border-radius: 5px;
+    &::before {
+        content: "";
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #558776;
+    }
+}
+
+.scroll-up-btn {
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background-color: #b58ecc;
+    border: 1px solid #E4BAD4;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 40px;
+    color: #333;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: #ed6dfb;
+    }
+}
+
+.show {
+    bottom: 30px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+body {
+    height: 100%;
+    background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+}
+
+#menu {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    padding: 0 25px;
+    font-size: 35px;
+    font-family: "Alex Brush", cursive;
+    display: flex;
+    justify-content: space-between;
+    background: #b58ecc;
+    z-index: 1;
+    .name {
+        cursor: pointer;
+        line-height: 76px;
+    }
+    .menu_content {
+        align-items: center;
+        display: flex;
+        .nav_item {
+            padding-left: 5px;
+            cursor: pointer;
+        }
+        a {
+            position: relative;
+            text-decoration: none;
+            color: #000;
+            padding-right: 10px;
+            &:hover {
+                text-decoration: none;
+                color: #000;
+                &::before {
+                    opacity: 1;
+                }
+            }
+            &::before {
+                opacity: 0;
+                content: "";
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background-color: #5de6de;
+                border-radius: 100%;
+                z-index: -1;
+                margin: auto;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transition: 1s;
+            }
+        }
+    }
+    .menu_mobile {
+        position: relative;
+        display: none;
+        .fix-item {
+            line-height: 76px;
+        }
+        .menu_mobile_content {
+            position: absolute;
+            background-color: #b58ecc;
+            top: 100px;
+            right: 10px;
+            width: 200px;
+            text-align: center;
+            &::before {
+                content: "";
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                background-color: #b58ecc;
+                transform: rotate(45deg);
+                top: -8px;
+                right: 8px;
+            }
+        }
+        a {
+            text-decoration: none;
+            margin-right: 12px;
+            color: #000;
+        }
+    }
+}
+
+#top {
+    margin-top: 150px;
+    .tytle {
+        font-size: 30px;
+        font-family: "Alex Brush", cursive;
+        margin: auto;
+        text-align: center;
+    }
+    .css-img {
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 5%;
+            box-shadow: 2px 2px 2px;
+        }
+    }
+}
+
+#about {
+    p {
+        font-size: 20px;
+        span {
+            position: relative;
+            &::before {
+                content: "";
+                width: 50px;
+                height: 2px;
+                background-color: red;
+                position: absolute;
+                top: 20px;
+                right: 82px;
+            }
+            &::after {
+                content: "";
+                width: 50px;
+                height: 2px;
+                background-color: red;
+                position: absolute;
+                top: 22px;
+                left: 82px;
+            }
+        }
+    }
+    .avatar {
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        img {
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px;
+        }
+    }
+    .about-right {
+        font-family: "Alex Brush", cursive;
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            dt {
+                width: 15%;
+            }
+            dd {
+                width: 85%;
+            }
+        }
+    }
+}
+
+#skill {
+    .title_skill {
+        p {
+            font-size: 20px;
+            span {
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    background-color: red;
+                    position: absolute;
+                    top: 20px;
+                    right: 106px;
+                }
+                &::after {
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    background-color: red;
+                    position: absolute;
+                    top: 20px;
+                    left: 106px;
+                }
+            }
+        }
+    }
+    .sakura_line {
+        display: flex;
+        justify-content: center;
+        .sakura_img {
+            background-image: url(../img/hoathinh.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 25px;
+            height: auto;
+        }
+    }
+    .skill_content {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        .skill_left {
+            display: flex;
+            width: 40%;
+            .icon_img {
+                width: 40px;
+                height: auto;
+            }
+        }
+        .skill_right {
+            width: 60%;
+            .skill_line {
+                @include skill_line();
+                &::before {
+                    width: 90%;
+                }
+            }
+            .css {
+                &::before {
+                    width: 80%;
+                }
+            }
+            .scss {
+                &::before {
+                    width: 80%;
+                }
+            }
+            .js {
+                &::before {
+                    width: 60%;
+                }
+            }
+            .java {
+                &::before {
+                    width: 50%;
+                }
+            }
+            .php {
+                &::before {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+#works {
+    .works_tytle {
+        p {
+            font-size: 20px;
+            span {
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    background-color: red;
+                    position: absolute;
+                    top: 20px;
+                    right: 128px;
+                }
+                &::after {
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    background-color: red;
+                    position: absolute;
+                    top: 20px;
+                    left: 128px;
+                }
+            }
+        }
+    }
+    .item {
+        margin: 10px;
+        position: relative;
+        overflow: hidden;
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 300px;
+            transition: transform 0.8s ease;
+        }
+        .gt {
+            position: absolute;
+            height: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #e4bad4;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            transition: 0.8s ease;
+        }
+        &:hover {
+            .gt {
+                height: 20%;
+            }
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+#contact {
+    .contact_tytle {
+        padding-bottom: 50px;
+        p {
+            font-size: 20px;
+            span {
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    background-color: red;
+                    position: absolute;
+                    top: 20px;
+                    right: 128px;
+                }
+                &::after {
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    background-color: red;
+                    position: absolute;
+                    top: 20px;
+                    left: 128px;
+                }
+            }
+        }
+    }
+    .contact-right {
+        .tytle-info {}
+        .contact-info {
+            .info-icon {
+                width: 15%;
+            }
+        }
+    }
+    .contact-left {
+        .tytle-messenger {}
+        .fix-boder {
+            border-radius: 100%;
+            .fix-width {
+                width: 40%;
+            }
+        }
+        .css-btn {
+            border: 2px solid #E4BAD4;
+            background-color: #F8EDED;
+            display: flex;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+    }
+    .img_dep {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+#footer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 20px;
+        height: auto;
+    }
+    .name {
+        margin-left: 10px;
+        font-family: "Alex Brush", cursive;
+    }
+}
+
+
+/*reponsive*/
+
+@media only screen and (max-width: 62rem) {}
+
+@media only screen and (max-width: 48rem) {
+    #top {
+        .css-img {
+            text-align: center;
+            img {
+                width: 50%;
+                height: auto;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 5%;
+                box-shadow: 2px 2px 2px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 36rem) {
+    #menu {
+        .menu_content {
+            display: none;
+        }
+        .menu_mobile {
+            display: block;
+            .menu_mobile_content {
+                display: none;
+            }
+        }
+    }
+}
